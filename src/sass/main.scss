@@ -151,10 +151,83 @@
         margin-bottom: 200px;
     }
 }
+// - start - - - 
+
+.start {
+    padding-top: 250px;
+    margin-top: 100px;
+    &__inner {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__img {
+        position: absolute;
+        left: -216px;
+        bottom: 0;
+        object-fit: contain;
+        object-position: left;
+        max-width: 65%;
+        height: 100%;
+    }
+
+    &__info {
+        max-width: 583px;
+        flex: 0 0 56%;
+        padding-left: 25px;
+    }
+
+    &__title {
+        font-size: 40px;
+        line-height: 110%;
+        margin-bottom: 50px;
+        width: 100%;
+    }
+
+    &__box {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-bottom: 80px;
+    }
+
+    &__box-img {
+        min-width: 60px;
+        min-height: 60px;
+        margin-right: 25px;
+        display: block;
+    }
+
+    &__box-inner {}
+
+    &__box-title {
+        font-size: 24px;
+        line-height: 135%;
+        margin-bottom: 8px;
+    }
+
+    &__box-text {
+        font-weight: 350;
+        font-size: 18px;
+        line-height: 135%;
+    }
+}
+
+
 
 // media
 
-@media(max-width: 1000px){
+@media(max-width: 1050px){
+    .start{
+        padding-top: 120px;
+        &__box{
+            margin-bottom: 55px;
+        }
+    }
+
+}
+    @media(max-width: 1000px){
     .search{
         &__img{
             top: 57px;
@@ -163,7 +236,23 @@
             max-width: 324px;
         }
     }
-
+}
+@media(max-width: 950px){
+    .menu__items.menu__items-free{
+        display: none;
+    }
+    .start{
+        padding-top: 90px;
+        &__box{
+            margin-bottom: 55px;
+        }
+    }
+}
+@media(max-width: 870px){
+    
+    .start{
+        padding-top: 0px;
+    }
 }
 @media(min-width: 767px){
     .menu {
@@ -201,6 +290,36 @@
 }
 
 @media(max-width: 768px){
+    .start{
+        &__inner{
+            justify-content: center;
+            flex-wrap: wrap-reverse;
+        }
+        &__img{
+            position: relative;
+            left: 0;
+            max-width: 100%;
+        }
+        &__info{
+            width: 100%;
+            flex: 0 0 100%;
+        }
+        &__title{
+            font-size: 35px;
+            text-align: center;
+        }
+        &__box{
+            text-align: center;
+            flex-direction: column;
+        }
+        &__box-img{
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+    .menu__items.menu__items-free{
+        display: block;
+    }
     .search{
         // position: absolute;
         padding-bottom: 80px;
