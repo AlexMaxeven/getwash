@@ -7,34 +7,76 @@
 // // vars - 
 // @import 'vars';
 
-// - - - test page - - - 
-.page-1, 
-.page-2 {
-    padding: 50px;
-    color: cadetblue;
-    &__title {
-        font-size: 36px;
-        color: black;
-        margin-bottom: 50px;
-    }
+// - - - dark - light - page - - - 
 
-    &__text {
-        color: darkslategray;
-        margin-bottom: 50px;
+html.dark .wrapper{
+    color: #FFFFFF;
+    background-color: #000;
+    .header{
+        background-color: #000;
+        color: #FFFFFF;
+    }
+    .partner__box-text {
+        color: #000;
+    }
+    .button-free:hover, .button-in {
+        background: #000;
+        color: #fff;
+        border: 1px solid #fff;
     }
 }
-.page-2 {
-    background-color: black;
-    &__title{
-        font-size: 36px;
-        color: blue;
-    }
-    &__text{
-        color: grey;
-    }
+html.light body{
+    color: #000;
+    background-color: #FFFFFF;
 }
-.page-1 {
-    background-color: bisque;
+
+html.dark .page__theme {
+    position: absolute;
+    // z-index: 5;
+    background: url(../img/white.png) 0 0 / 100% no-repeat;
+    background-size: contain;
+    width: 52px;
+    top: 7px;
+    left: 35%;
+    height: 88px;
+    z-index: 5;
+}
+html.light .page__theme {
+    position: absolute;
+    width: 100px;
+    background: url(../img/dark01.png) 0 0 / 100% no-repeat;
+    background-size: contain;
+    width: 63px;
+    height: 80px;
+    top: 0;
+    left: 35%;
+    height: 100px;
+    z-index: 5;
+}
+
+.page__reset{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    &:active{
+        opacity: 1;
+        visibility: visible;
+    }
+    &::before{
+        content: 'x';
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        width: 10px;
+        height: 10px;
+        font-size: 7px;
+        border-radius: 50%;
+        line-height: 10px;
+        color: #FFF;
+        text-align: center;
+        background-color: #666;
+    }
 }
 
 // - - - header menu - - -
@@ -49,11 +91,6 @@
     &__logo {
         z-index: 5;
     }
-
-    &__logo-img {}
-
-    &__menu {}
-
     &__inner{
         display: flex;
         padding: 0px 30px;
@@ -72,19 +109,17 @@
     background-color: #FFFFFF;
     border: 1px solid #E9ECF5;
     border-radius: 6px;
-    color: #446DF6;
+    color: #000;
     &:hover{
-        background: #446DF6;
+        background: #000;
         color: #FFFFFF;
     }
-    &__link {}
 }
 .button-in {
     padding: 14px 25px;
-    background: #446DF6;
+    background: #000;
     border-radius: 6px;
     color: #FFFFFF;
-    &__link {}
 }
 
 // search 
@@ -198,9 +233,6 @@
         margin-right: 25px;
         display: block;
     }
-
-    &__box-inner {}
-
     &__box-title {
         font-size: 24px;
         line-height: 135%;
@@ -299,9 +331,6 @@
             background-position: right;
         }
     }
-
-    &__info {}
-
     &__title {
         padding: 52px 0px 17px 70px;  
         max-width: 365px;
@@ -340,15 +369,12 @@
 
 .review {
     padding-top: 100px;
+    padding-bottom: 100px;
     &__title {
         font-size: 40px;
         line-height: 140%;
         margin-bottom: 17px;
     }
-
-    &__inner {}
-
-    &__box {}
 
     &__box-text {
         padding-bottom: 30px;
@@ -365,15 +391,11 @@
     &__box-info {
         display: flex;
     }
-
-    &__box-img {}
-
     &__box-name {
         font-size: 24px;
         line-height: 140%;
     }
 
-    &__box-profile {}
 }
 
 // slick - - -
@@ -404,12 +426,30 @@
         background-size: contain;
         width: 60px;
         left: 600px;
-        top: -407px;  
+        top: -406px;  
         height: 60px;
     }
 }
 
-@media(max-width: 1200px){
+// footer - - -
+
+.footer {
+    background-color: #000;
+    height: 100px;
+    &__img {
+        display: block;
+        margin: 40px auto 0;
+    }
+}
+
+// media - - - 
+
+@media(max-width: 1250px){
+    html.dark .page__theme, html.light .page__theme {
+        left: 19%;
+    }
+}
+    @media(max-width: 1200px){
     .partner{
         &__inner{
             flex-wrap: wrap;
@@ -437,6 +477,9 @@
     }
 }
 @media(max-width: 950px){
+    html.dark .page__theme, html.light .page__theme {
+        left: 24%;
+    }
     .menu__items.menu__items-free{
         display: none;
     }
@@ -463,13 +506,7 @@
     }
 }
 @media(min-width: 767px){
-    .menu {
-
-        &__icon {
-        }
-    
-        &__body {}
-    
+    .menu {    
         &__list {
             display: flex;
             align-items: center;
@@ -488,9 +525,7 @@
                 text-decoration: underline;
             }
         }
-    
-        &__items-free {}
-    
+        
         &__items-in {
             display: none;
         }
@@ -498,6 +533,9 @@
 }
 
 @media(max-width: 768px){
+    html.dark .page__theme, html.light .page__theme {
+        left: 47%;
+    }
     .review{
         text-align: center;
         &__box-info{
@@ -520,7 +558,7 @@
     }
     .slick-next::after {
         left: 23px;
-        top: 37px;
+        top: 40px;
     }
     .download{
         &__inner{
@@ -586,8 +624,6 @@
         bottom: 0;
         left: 0;
         padding-top: 90px;
-        &__inner{
-        }
         .button-free{
             display: block;
             font-size: 20px;
@@ -656,7 +692,7 @@
                 height: 10%;
                 width: 100%;
                 transition: all 0.3s ease 0s;
-                background-color: #446DF6;
+                background-color: #000;
                 content: '';
             }
             span {
@@ -665,7 +701,7 @@
                 height: 10%;
                 width: 100%;
                 transition: all 0.3s ease 0s;
-                background-color: #446DF6;
+                background-color: #000;
                 top: 50%;
                 transform: scale(1) translate(0px, -50%);
             }
@@ -698,7 +734,7 @@
             border-bottom: 1px solid #E9ECF5;
             font-size: 20px;
             font-weight: 500;
-            color: #446DF6;
+            color: #000;
             &:first-child{
                 border-top: 1px solid #E9ECF5;
             }
@@ -725,6 +761,23 @@
     .button-in {
         padding: 26px 30px;
         font-size: 18px;
+    }
+    html.dark .wrapper{
+        .menu{
+            &__items{
+                color: #ffffff;
+                background-color: #000;
+            }
+        }
+        .menu__body._active {
+            left: 0;
+            color: #ffffff;
+            background-color: #000;
+        }
+        .menu__icon span, .menu__icon::after, .menu__icon::before {
+            background-color: #fff;
+
+        }
     }
 }
 
@@ -765,5 +818,12 @@
         }
     }    
 }
+@media (max-width: 400px) {
+    html.dark .page__theme, html.light .page__theme {
+        left: 56%;
+    }
+}
+
+
 // - slick scss
 @import "./libs/slick.scss";
