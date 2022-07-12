@@ -1,0 +1,33 @@
+a{
+	color: inherit;
+}
+
+html,
+body{
+    height: 100%;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
+    background-color: #FFFFFF;
+}
+
+body._lock{
+    overflow: hidden;
+}
+
+.wrapper{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+	flex: 1 1 auto;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
