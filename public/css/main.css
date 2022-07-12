@@ -360,6 +360,85 @@ body._lock {
   line-height: 135%;
 }
 
+.partner {
+  padding-top: 80px;
+  padding-bottom: 120px;
+}
+
+.partner .button-in {
+  display: block;
+  margin: 0 auto;
+}
+
+.partner__title {
+  text-align: center;
+  font-size: 40px;
+  line-height: 125%;
+  margin-bottom: 17px;
+}
+
+.partner__subtitle {
+  text-align: center;
+  font-size: 18px;
+  line-height: 140%;
+  margin: 0px auto 60px;
+  max-width: 840px;
+}
+
+.partner__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.partner__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  text-align: center;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 16px 20px rgba(20, 27, 65, 0.03);
+  box-shadow: 0px 16px 20px rgba(20, 27, 65, 0.03);
+  border-radius: 10px;
+  min-height: 200px;
+  min-width: 200px;
+  margin-bottom: 60px;
+}
+
+.partner__box + .partner__box {
+  margin-left: 30px;
+}
+
+.partner__box-img {
+  display: block;
+  margin: 0 auto 20px;
+  min-width: 60px;
+  min-height: 60px;
+}
+
+.partner__box-text {
+  font-weight: 350;
+  font-size: 16px;
+  line-height: 140%;
+  max-width: 145px;
+  margin: 0 auto;
+}
+
 @media (min-width: 767px) {
   .menu__list {
     display: -webkit-box;
@@ -383,6 +462,16 @@ body._lock {
 
   .menu__items-in {
     display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .partner__inner {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 }
 
@@ -669,5 +758,13 @@ body._lock {
 
   .search .button-free {
     font-size: 18px;
+  }
+
+  .partner__box + .partner__box {
+    margin-left: 0px;
+  }
+
+  .partner__title {
+    font-size: 33px;
   }
 }
