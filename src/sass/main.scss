@@ -277,10 +277,137 @@
     }
 }
 
+// - download - - - 
 
+.download {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #7896F8;
+        opacity: 0.85;
+        border-radius: 20px;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            background-image: url('../img/download-2.png');
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+    }
 
+    &__info {}
 
-// media
+    &__title {
+        padding: 52px 0px 17px 70px;  
+        max-width: 365px;
+        font-size: 40px;
+        line-height: 115%;
+        color: #F7F8FD;
+    }
+
+    &__text {
+        font-weight: 350;
+        font-size: 18px;
+        line-height: 140%;
+        color: #E9ECF5;
+        max-width: 355px;
+        padding: 0px 0px 45px 70px;
+    }
+
+    &__box {
+        padding: 0px 0px 64px 70px;
+    }
+
+    &__img {
+        cursor: pointer;
+    }
+
+    &__big-image {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 124%;
+        // width: 100%;
+    }
+}
+
+// - review - - - 
+
+.review {
+    padding-top: 100px;
+    &__title {
+        font-size: 40px;
+        line-height: 140%;
+        margin-bottom: 17px;
+    }
+
+    &__inner {}
+
+    &__box {}
+
+    &__box-text {
+        padding-bottom: 30px;
+        border-bottom: 1px solid #F7F8FD;
+        font-weight: 350;
+        font-size: 18px;
+        line-height: 140%;
+        max-width: 700px;
+        margin-bottom: 43px;
+    }
+    &__name{
+        margin-left: 30px;
+    }
+    &__box-info {
+        display: flex;
+    }
+
+    &__box-img {}
+
+    &__box-name {
+        font-size: 24px;
+        line-height: 140%;
+    }
+
+    &__box-profile {}
+}
+
+// slick - - -
+
+.slick-prev{
+    font-size: 0;
+    position: relative;
+    &::after{
+        content: '';
+        background-image: url(../img/prew-arrow.png);
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 60px;
+        top: -94px;
+        left: 526px;
+        height: 60px;
+    }
+}
+.slick-next{
+    font-size: 0;
+    position: relative;
+    &::after{
+        content: '';
+        background-image: url(../img/next-arrow.png);
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 60px;
+        left: 600px;
+        top: -407px;  
+        height: 60px;
+    }
+}
 
 @media(max-width: 1200px){
     .partner{
@@ -321,7 +448,16 @@
     }
 }
 @media(max-width: 870px){
-    
+    .download{
+        &__text,
+        &__title,
+        &__box{
+            padding-left: 15px;
+        }
+        &__text{
+            max-width: 280px;
+        }
+    }
     .start{
         padding-top: 0px;
     }
@@ -362,6 +498,54 @@
 }
 
 @media(max-width: 768px){
+    .review{
+        text-align: center;
+        &__box-info{
+            flex-direction: column;
+        }
+        &__box-img{
+            margin: 0 auto 20px;
+            max-width: 75px;
+        }
+        &__name{
+            margin-left: 0;
+        }
+        &__box-text{
+            height: 250px;
+        }
+    }
+    .slick-prev::after {
+        top: 510px;
+        left: -95px;
+    }
+    .slick-next::after {
+        left: 23px;
+        top: 37px;
+    }
+    .download{
+        &__inner{
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            &::after{
+                background-image: none;
+                width: 0px;
+                height: 0px;
+            }
+        }
+        &__big-image{
+            left: -9%;
+
+            position: relative;
+        }
+        &__text{
+            max-width: 100%;
+        }
+        &__title{
+            max-width: 100%;
+        }
+
+    }
     .start{
         &__inner{
             justify-content: center;
@@ -544,6 +728,21 @@
     }
 }
 
+
+@media (max-width: 520px) {
+    .download{
+        &__title{
+            font-size: 33px;
+        }
+        &__img{
+            margin-bottom: 10px;
+        }
+        &__big-image{
+            height: 100%;
+            width: 99%;
+        }
+    }
+}
 @media (max-width: 520px) {
     .search{
         &__title{
@@ -564,9 +763,7 @@
         &__title{
             font-size: 33px;
         }
-    }
-    
-    
+    }    
 }
 // - slick scss
-// @import "./libs/slick.scss";
+@import "./libs/slick.scss";

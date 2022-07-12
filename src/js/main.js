@@ -39,3 +39,14 @@ if (iconMenu) {
     });
     
 }
+
+// slick-carousel (slider)
+
+import $ from "jquery";
+import "slick-carousel";
+
+$(".review__inner").slick({
+    dots: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
+});
